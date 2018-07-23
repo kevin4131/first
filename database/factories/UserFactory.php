@@ -13,11 +13,19 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(\App\Guodian\User::class, function (Faker $faker) {
+    $companyId = \App\Guodian\Company::select('id')->inRandomOrder()->first()->toArray()['id'];
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'remember_token' => str_random(10),
+        //
+        'username'        => 'yw' . $faker->numberBetween(100000, 999999),
+        'nickname'        => $faker->firstName,
+        'password'        => bcrypt('gd123456'),
+        'email'           => $faker->companyEmail,
+        'mobile'          => 1 . $faker->numberBetween(3, 9) . rand(000000000, 999999999),
+        'reg_ip'          => env('DB_HOST'),
+        'last_login_at'   => date('Y-m-d H:i:s'),
+        'last_login_ip'   => app('request')->ip(),
+        'next_resetwd_at' => date('Y-m-d H:i:s', strtotime('+2 month')),
+        'company_id'      => $companyId,
     ];
 });

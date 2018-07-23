@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['namespace' => 'Allstar'], function (){
+    Route::match(['get', 'post'], 'fire/list', 'FireController@list')->name('fire');
+});
