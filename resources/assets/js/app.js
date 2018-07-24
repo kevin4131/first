@@ -10,13 +10,13 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 
-
 import App from './app.vue';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import router from './router/router.js';
+
 Vue.use(ElementUI);
 
-import router from './router/router.js';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -26,6 +26,7 @@ import router from './router/router.js';
 
 Vue.component('tableComponent', require('./components/ListComponent.vue'));
 Vue.component('heroComponent', require('./components/HeroSelectComponent.vue'));
+Vue.component('ImportComponent', require('./components/ImportComponent.vue'));
 
 
 const app = new Vue({

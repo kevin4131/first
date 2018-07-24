@@ -12,4 +12,9 @@ class FireController extends Controller
     {
         return view('Allstar.Fire.list');
     }
+
+    public function add(Request $request)
+    {
+        return view('Allstar.Fire.add');
+    }
 }

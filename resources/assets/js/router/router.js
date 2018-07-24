@@ -15,5 +15,11 @@ export default new VueRouter({
             path: '/tableList',
             component: resolve => void(require(['../components/ListComponent.vue'], resolve))
         },
+        {
+            name: "add",
+            path: '/import',
+            component: resolve => void(require(['../components/ImportComponent.vue'], resolve))
+        },
+
     ]
 })

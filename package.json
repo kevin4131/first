@@ -19,7 +19,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "element-ui": "^2.4.3",
+        "element-ui": "^2.4.4",
         "less-loader": "^4.1.0",
         "vue-router": "^3.0.1",
         "vux": "^2.9.2",
